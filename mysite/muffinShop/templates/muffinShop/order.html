@@ -1,0 +1,14 @@
+
+
+<form method="POST" action="{% url 'muffinShop:order_confirm'  %}"class="post-form">{% csrf_token %}
+{% csrf_token %}
+        <input type = "number" name="product_id" value="{{product.product_id}}" hidden >
+        <p> <label for = "product_name">제품명:</label>
+        <input type="text" name="product_name" value="{{product.product_name}}{{product.category}}" id="product_name" readonly></p>
+        <p><label for = "qt">수량:</label>
+        <input type="text" name ="quantity" value="{{quantity}}" id="qt" readonly></p>
+        <p><label for = "price">가격:</label>
+        <input type="text" name="total_price" value="{{quantity}}*{{product.price}}= {{total_price}}" id="price" readonly></p>
+        {{order_form.as_p}}
+        <input type="submit" value="입력">
+</form>

@@ -1,0 +1,13 @@
+{% if order %}
+
+{% csrf_token %}
+<h1>{{order.user_name}}님의 주문내역</h1>
+    <ul>
+        <li> 주문일자 : {{order.order_date}} </li>
+        <li> 번호 : {{order.user_phone}} </li>
+        <li> 주소: {{order.user_address}}</li>
+        <li> 주문내역 : {{list |join:" "|linebreaksbr }}</li>
+    </ul>
+
+
+{% endif %}

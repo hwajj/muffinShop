@@ -1,0 +1,12 @@
+<style>
+p{
+   padding-left:10px;
+   }
+</style>
+
+{%if orderInfo%}
+
+        {%if orderItem_info%}
+        {{list |join:" "|linebreaksbr }}
+        {% endif %}
+{% endif %}

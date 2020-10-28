@@ -1,0 +1,17 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% if product_lists %}
+
+<form class="post-form" action="{% url 'muffinShop:new_order'  %}" method="post">
+{% csrf_token %}
+    <ul>
+    {% for product in product_lists %}
+   <li>{{product.product_number}}.   {{product.product_name}}{{product.category}} {{product.price}}</li>
+
+    {% endfor %}
+    </ul>
+    {{form.as_p}}
+     <input type="submit" value="submit">
+</form>
+
+{% endif %}

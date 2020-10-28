@@ -1,0 +1,6 @@
+
+    <form action="{% url 'muffinShop:check_order'  %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" name="입력"/>
+    </form>
