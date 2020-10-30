@@ -109,7 +109,8 @@ def check_order(request):
         for order in order_info:
             order_id = order.order_id
             orderitem_info = OrderItem.objects.filter(order_id=order_id)
-            list.append(f"\n{order.user_name}님의 주문내역\n 주문일 {order.order_date} \n "
+            order_date = order.order_date.strftime("%Y-%m-%d")
+            list.append(f"\n{order.user_name}님의 주문내역\n 주문일 {order_date} \n "
                         f"지불비용 {order.total_price}\n"
                         f" 전화번호 {order.user_phone} \n 주소 {order.user_address} \n")
             for item in orderitem_info:
