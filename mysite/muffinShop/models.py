@@ -24,7 +24,7 @@ class Order(models.Model):
     order_date = models.DateField(null=True)
     total_price = models.PositiveIntegerField(blank=True, null=True)
     user_name = models.CharField(max_length=10, null=True)
-    user_phone = models.CharField(max_length=10, null=True)
+    user_phone = models.CharField(max_length=15, null=True)
     user_address = models.CharField(max_length=50, null=True)
 
     # payment = models.

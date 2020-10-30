@@ -1,11 +1,11 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% if product_lists %}
+{% if products %}
 
-<form class="post-form" action="{% url 'muffinShop:new_order'  %}" method="post">
+<form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
 {% csrf_token %}
     <ul>
-    {% for product in product_lists %}
+    {% for product in products %}
    <li>{{product.product_number}}.   {{product.product_name}}{{product.category}} {{product.price}}</li>
 
     {% endfor %}

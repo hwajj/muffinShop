@@ -10,14 +10,12 @@ urlpatterns = [
     path('', views.index,  name='index'),
     #path('', views.IndexView.as_view(), name='index'),
 
-    path('order/', views.new_order, name='new_order'),
+    path('order/', views.order, name='order'),
     #ex./muffinShop/order
 
-   # path('order/', views.order, name='order'),
-    #path('order/',views.ConfirmView.as_view(),  name='order'),
 
-    # ex./muffinShop/2/order
-    path('order/confirm', views.order_confirm ,name='order_confirm'),
+    # ex./muffinShop/order/confirm
+    path('order/confirm', views.confirm ,name='confirm'),
 
     # ex./muffinShop/check
     path('check/', views.check, name='check'),

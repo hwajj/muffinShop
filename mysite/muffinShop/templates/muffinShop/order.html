@@ -1,6 +1,6 @@
 
 
-<form method="POST" action="{% url 'muffinShop:order_confirm'  %}"class="post-form">{% csrf_token %}
+<form method="POST" action="{% url 'muffinShop:confirm'  %}"class="post-form">
 {% csrf_token %}
         <input type = "number" name="product_id" value="{{product.product_id}}" hidden >
         <p> <label for = "product_name">제품명:</label>
