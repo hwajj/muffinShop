@@ -52,6 +52,7 @@ def order(request):
 def confirm(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
+
         if order_form.is_valid():
             quantity = request.POST['quantity']
             product_id = request.POST['product_id']
@@ -60,7 +61,7 @@ def confirm(request):
             print(quantity)
             order = order_form.save()
             order.total_price = int(product.price) * int(quantity)
-            order.order_date = datetime.now()
+            order.order_date = datetime.now().strftime("%Y-%m-%d %H:%M")
             order.save()
             orderitem = OrderItem.objects.create(
                 order_id=order.order_id,

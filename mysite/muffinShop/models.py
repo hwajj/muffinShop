@@ -19,9 +19,10 @@ class Product(models.Model):
     def product_full_name(self):
         return f'{self.product_name} +{self.category}'
 
+
 class Order(models.Model):
     order_id = models.AutoField(primary_key=True)
-    order_date = models.DateField(null=True)
+    order_date = models.DateTimeField(null=True)
     total_price = models.PositiveIntegerField(blank=True, null=True)
     user_name = models.CharField(max_length=10, null=True)
     user_phone = models.CharField(max_length=15, null=True)
@@ -30,7 +31,6 @@ class Order(models.Model):
     # payment = models.
     def __str__(self):
         return str(self.order_id)
-
 
 
 class OrderItem(models.Model):

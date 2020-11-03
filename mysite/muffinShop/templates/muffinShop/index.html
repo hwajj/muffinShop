@@ -1,3 +1,8 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 {% if products %}
@@ -7,7 +12,8 @@
     <ul>
     {% for product in products %}
    <li>{{product.product_number}}.   {{product.product_name}}{{product.category}} {{product.price}}</li>
-
+        <img src="../asset/cookie/chocochip_cookie.png">
+        <img src="../asset/cookie/almond_cookie.png">
     {% endfor %}
     </ul>
     {{form.as_p}}
@@ -15,3 +21,5 @@
 </form>
 
 {% endif %}
+</body>
+</html>
