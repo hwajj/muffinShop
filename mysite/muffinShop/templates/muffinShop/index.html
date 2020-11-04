@@ -1,25 +1,30 @@
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% extends 'muffinShop/base.html' %}
+
+{% block content %}
+  <div class="products">
+{% if error_message %}<p><strong>{{ error_message }}</strong> </p><br>{% endif %}
 
 {% if products %}
 
-<form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
-{% csrf_token %}
-    <ul>
+  {% csrf_token %}
+
     {% for product in products %}
-   <li>{{product.product_number}}.   {{product.product_name}}{{product.category}} {{product.price}}</li>
-        <img src="../asset/cookie/chocochip_cookie.png">
-        <img src="../asset/cookie/almond_cookie.png">
+   <div id="product">
+      <p>{{product.product_number}}. {{product.product_name}}{{product.category}}
+     ({{product.price}})  </p>
+            </div>
     {% endfor %}
-    </ul>
-    {{form.as_p}}
-     <input type="submit" value="submit">
-</form>
+    </div>
+
+     <div id="input-form">
+       <form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+    <input type="submit" value="submit">
+    </form>
+    </div>
+
 
 {% endif %}
-</body>
-</html>
+
+{% endblock %}

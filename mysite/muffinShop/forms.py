@@ -14,12 +14,12 @@ from django.core.validators import RegexValidator
 
 
 class InputForm(forms.Form):
-    product_number = forms.IntegerField(min_value=1,max_value=11, initial=1)
-    quantity = forms.IntegerField(min_value=1,max_value=10, initial=1, required=False)
+    product_number = forms.IntegerField(min_value=1,max_value=11, initial=1, label="품번")
+    quantity = forms.IntegerField(min_value=1,max_value=10, initial=1, required=False, label="수량", help_text='개')
 
 
 class NumberForm(forms.Form):
-    number = forms.CharField(max_length=11,label='휴대폰번호',help_text='주문할때 적은 번호를 입력하세요')
+    number = forms.CharField(max_length=11,label='휴대폰번호')
 
 
 class OrderForm(forms.ModelForm):

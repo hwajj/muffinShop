@@ -122,10 +122,12 @@ def check_order(request):
                 item_price = price * qt
                 str = f"{product_name}{product.category}({price}) X {qt} = {item_price}\n"
                 list.append(str)
+
         context = {
             'order_info': order_info,
             'orderitem_info': orderitem_info,
             'list': list,
+            'error_message': '입력양식이 잘못되어 처음으로 돌아옵니다.',
         }
         return render(request, 'muffinShop/check_phone.html', context)
     else:

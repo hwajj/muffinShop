@@ -3,9 +3,9 @@ from django.db import models
 
 class Product(models.Model):
     class Category(models.TextChoices):
-        MUFFIN = '_Muffin'
-        COOKIE = '_Cookie'
-        CUPCAKE = '_Cupcake'
+        MUFFIN = ' Muffin'
+        COOKIE = ' Cookie'
+        CUPCAKE = ' Cupcake'
 
     product_id = models.AutoField(primary_key=True )
     product_number = models.PositiveSmallIntegerField()

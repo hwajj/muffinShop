@@ -1,6 +1,15 @@
+{% extends 'muffinShop/base.html' %}
 
-    <form action="{% url 'muffinShop:check_order'  %}" method="post">
+{% block content %}
+
+    <div id="input-number">
+        <p> 주문 시 작성하신 휴대폰 번호를 입력하세요</p>
+        <form action="{% url 'muffinShop:check_order'  %}" method="post">
         {% csrf_token %}
+        <div>
         {{form.as_p}}
-        <input type="submit" name="입력"/>
+        <input type="submit" name="input" value="입력"/>
+            </div>
     </form>
+    </div>
+{% endblock %}

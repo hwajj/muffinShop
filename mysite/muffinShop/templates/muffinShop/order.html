@@ -1,7 +1,11 @@
 
+{% extends 'muffinShop/base.html' %}
 
+{% block content %}
+<div class="order">
 <form method="POST" action="{% url 'muffinShop:confirm'  %}"class="post-form">
 {% csrf_token %}
+
         <input type = "number" name="product_id" value="{{product.product_id}}" hidden >
         <p> <label for = "product_name">제품명:</label>
         <input type="text" name="product_name" value="{{product.product_name}}{{product.category}}" id="product_name" readonly></p>
@@ -11,4 +15,7 @@
         <input type="text" name="total_price" value="{{quantity}}*{{product.price}}= {{total_price}}" id="price" readonly></p>
         {{order_form.as_p}}
         <input type="submit" value="입력">
-</form>
+        </form>
+        </div>
+
+{% endblock %}
