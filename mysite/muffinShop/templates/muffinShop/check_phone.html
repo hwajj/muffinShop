@@ -1,16 +1,10 @@
 {% extends 'muffinShop/base.html' %}
-
 {% block content %}
-
-
 {%if order_info%}
-
-        {%if orderitem_info%}
+    {%if orderitem_info%}
         <div id="check-phone">
         {{list |join:" "|linebreaksbr }}
-        {% endif %}
         </div>
+    {% endif %}
 {% endif %}
-
-
 {% endblock %}

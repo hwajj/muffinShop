@@ -1,25 +1,19 @@
 {% extends 'muffinShop/base.html' %}
-
 {% block content %}
-
 {% if order %}
-
 {% csrf_token %}
 <div class="confirm">
-    <h1> &nbsp&nbsp {{order.user_name}}님의 주문내역</h1>
-    <br>
-    <h2>
+  <h1>&nbsp&nbsp {{order.user_name}}님의 주문내역</h1>
+  <br />
+  <h2>
     <ul>
-        <li> 주문상품 : {{product.product_name}}{{ product.category}}</li>
-        <li> 주문수량 : {{orderitem.quantity}}개 </li>
-        <li> 총 가격 : {{order.total_price}} </li>
-        <li> 주문일자 : {{order.order_date}} </li>
-        <li> 번호 : {{order.user_phone}} </li>
-        <li> 주소: {{order.user_address}} </li>
+      <li>주문상품 : {{product.product_name}}{{ product.category}}</li>
+      <li>주문수량 : {{orderitem.quantity}}개</li>
+      <li>총 가격 : {{order.total_price}}</li>
+      <li>주문일자 : {{order.order_date}}</li>
+      <li>번호 : {{order.user_phone}}</li>
+      <li>주소: {{order.user_address}}</li>
     </ul>
-        </h2>
-
+  </h2>
 </div>
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}

@@ -1,30 +1,21 @@
 {% extends 'muffinShop/base.html' %}
-
 {% block content %}
-  <div class="products">
-{% if error_message %}<p><strong>{{ error_message }}</strong> </p><br>{% endif %}
+<div class="products">
+  {% if error_message %}
+  <p><strong>{{ error_message }}</strong></p>
+  <br />{% endif %} {% if products %} {% csrf_token %} {% for product in products %}
+  <div id="product">
+    <p>{{product.product_number}}. {{product.product_name}}{{product.category}} ({{product.price}})</p>
+  </div>
+  {% endfor %}
+</div>
 
-{% if products %}
-
-  {% csrf_token %}
-
-    {% for product in products %}
-   <div id="product">
-      <p>{{product.product_number}}. {{product.product_name}}{{product.category}}
-     ({{product.price}})  </p>
-            </div>
-    {% endfor %}
-    </div>
-
-     <div id="input-form">
-       <form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
-      {% csrf_token %}
-      {{form.as_p}}
-    <input type="submit" value="submit">
-    </form>
-    </div>
-
+<div id="input-form">
+  <form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="submit" />
+  </form>
+</div>
 
 {% endif %}
-
 {% endblock %}
