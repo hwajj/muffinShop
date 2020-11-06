@@ -23,7 +23,11 @@ class InputForm(forms.Form):
 
 
 class NumberForm(forms.Form):
-    number = forms.CharField(max_length=11)
+    number = forms.CharField(max_length=11, label='')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
 
 
 class OrderForm(forms.ModelForm):
