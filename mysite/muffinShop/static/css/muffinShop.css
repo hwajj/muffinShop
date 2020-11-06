@@ -1,100 +1,126 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Trispace', sans-serif;
-}
-
-#page-header {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-#logo{
-  font-size: 3em;
-}
-
-#home,
-#check {
-  padding: 3rem;
-}
-
-.container {
-  font-size: 1.2em;
-  width: 80vw;
-  height: 70vh;
-  display: flex;
-  /*  flex-direction: row;
-    flex-wrap: wrap; */
-   /*main axis */
-  flex-flow: row nowrap;
-  justify-content: space-around; /*main axis */
-  align-items: flex-start;
+  font-family: "Noto Serif KR", serif;
 }
 
 ul,
+ol,
 li {
+  margin-left: 0;
+  padding-left: 0;
   list-style-type: none;
 }
 
-#product {
-  height: 4rem;
+a {
+  text-decoration: none;
 }
 
-#input-form {
+img {
+  border: 0;
+}
+
+/** 헤더 **/
+header {
+  /* 중앙정렬 */
+  width: 80vw;
+  margin: 0 auto;
+
+  /* 절대좌표 */
+  height: 160px;
   position: relative;
-  top: 34rem;
-  left: 3rem;
-}
-
-input:first-child {
-  height: 2rem;
-}
-
-#id_product_number {
-  height: 2rem;
-}
-
-.order input{
-  height: 2rem;
-  margin: 1rem;
-  width: 15rem;
-}
-
-input[type="submit"] {
-  margin-left: 3em;
 }
 
 
-.order input[type="submit"] {
-  width: 5rem;
-  margin: 0 0 0 16rem;
+
+header > #main_gnb {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+
 }
 
-#check-phone{
-  padding-left:10px;
-   }
-
-.confirm h1 {
-  margin:0 4rem;
+#main_gnb > ul {
+  overflow: hidden;
 }
 
-.confirm li {
-  padding: 1rem;
-  list-style-type: none;
+#main_gnb > ul > li {
+  float: left;
 }
 
-#id_number {
-  margin: 1rem;
-  width:10rem;
-  height:2em;
-  text-align:center;
+#main_gnb > ul > li > a {
+  display: block;
+  padding: 2px 10px;
+  border: 3px solid #ed5485;
+  font-color: #666452;
 }
 
-#input-number input[type="submit"] {
-  position: relative;
-  left: 16rem;
-  top: -3.7rem;
+
+#main_gnb > ul > li > a:link {
+  text-decoration:none;
+  color: #666452;
 }
 
-#check-phone {
-  padding: 0rem 0 2rem 0;
+
+#main_gnb > ul > li > a:visited {
+  text-decoration:none;
 }
+
+
+#main_gnb > ul > li > a:hover {
+  background: #ed5485;
+  color: #fffde6;
+}
+
+#main_gnb > ul > li > a:active {
+  text-decoration: none;
+}
+
+#main_gnb > ul > li:first-child > a {
+  border-radius: 10px 10px 10px 10px;
+}
+/* 주문확인 */
+
+.container> #product_section {
+    margin: 4vw;
+    width: 60vw;
+    font-size: 1rem;
+
+}
+/* 콘텐츠 */
+
+.container> #product_section {
+    margin: 4vw;
+    width: 60vw;
+    font-size: 1rem;
+    float: left;
+
+}
+.container> #order_aside {
+    margin: 10vw;
+    width: 10vw;
+    float: right;
+
+}
+input#submit{
+margin: 1rem;
+ padding: 2px 10px;
+  border: 1px solid #ed5485;
+  border-radius: 7px 7px 7px 7px;
+  background:#ed5485;
+  color:#fffde6;
+}
+
+input#submit:hover {
+background:#fffde6;
+  color:#ed5485;
+
+}
+
+/* 주문하기 */
+
+/* 푸터 */

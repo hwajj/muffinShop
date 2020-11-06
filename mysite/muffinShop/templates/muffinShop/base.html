@@ -1,21 +1,32 @@
 {% load static %}
-<html>
+<html lang="en">
   <head>
-    <title>Muffin Shop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Trispace&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="{% static 'css/muffinShop.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"  href="{% static 'css/muffinShop.css' %}" />
+    <link href="{% static "asset/image/favicon.ico" %}" rel="shortcut icon" type="image/x-icon">
+    <title>MuffinShop</title>
   </head>
-
   <body>
-    <header id="page-header">
-      <h2 id="home"><a href="/muffinShop">Home</a></h2>
-      <h1 id="logo">&nbsp; Muffin Shop</h1>
-      <h2 id="check"><a href="/muffinShop/check">주문확인</a></h2>
+    <header>
+      <div id="title">
+        <a href="/muffinShop"><img src="{% static "asset/image/main-logo.png" %}" alt="머핀샵 로고" width="300rem" /></a>
+      </div>
+      <nav id="main_gnb">
+        <ul>
+          <li><a href="/muffinShop/check">주문확인</a></li>
+        </ul>
+      </nav>
     </header>
-
     <div class="container">
       {% block content %}
       {% endblock %}
     </div>
+    <footer>
+
+
+    </footer>
+
   </body>
 </html>
