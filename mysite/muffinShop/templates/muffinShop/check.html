@@ -4,10 +4,8 @@
   <p>주문 시 작성하신 휴대폰 번호를 입력하세요</p>
   <form action="{% url 'muffinShop:check_order'  %}" method="post">
     {% csrf_token %}
-    <div>
-      {{form.as_p}}
+      {{form.as_table}}
       <input type="submit" name="input" value="입력" />
-    </div>
   </form>
 </div>
 {% endblock %}
