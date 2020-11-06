@@ -15,7 +15,7 @@ from django.core.validators import RegexValidator
 
 class InputForm(forms.Form):
     product_number = forms.IntegerField(min_value=1,max_value=11, initial=1, label="품번")
-    quantity = forms.IntegerField(min_value=1,max_value=10, initial=1, required=False, label="수량", help_text='개')
+    quantity = forms.IntegerField(min_value=1,max_value=10, initial=1, required=False, label="수량")
 
 
 class NumberForm(forms.Form):
