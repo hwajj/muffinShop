@@ -16,7 +16,7 @@
 <aside id="order_aside">
   <form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
     {% csrf_token %} {{form.as_p}}
-    <input type="submit" id="submit" value="submit" />
+    <input type="submit" class="submit" value="submit" />
   </form>
 </aside>
 </div>

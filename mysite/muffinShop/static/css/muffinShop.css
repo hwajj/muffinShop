@@ -73,7 +73,7 @@ header > #main_gnb {
   display: block;
   margin: 1rem 3rem;
   padding: 2px 10px;
-  color: #666452;
+  color: #666452;  /*기본 고동색 */
    text-decoration: none;
 }
 
@@ -124,7 +124,7 @@ header > #main_gnb {
   position: relative;
 }
 
-input#submit{
+.submit{
   left: 2rem;
   margin:1rem 0;
   padding: 1px 10px;
@@ -136,7 +136,7 @@ input#submit{
 }
 
 
-input#submit:hover {
+.submit:hover {
  background:#fffde6; /**연노랑색**/
   color:#ed5485; /**분홍색**/
 
@@ -150,18 +150,17 @@ input#submit:hover {
    align-items: space-evenly;
 }
 
-
-.order p {
-    padding: 1rem 2rem;
-     color: pink;
+#order_detail {
+ color: #666452;
 }
 
-.order p input {
-       color: pink;
-
+#order_detail_table {
+ color: #666452;
 }
 
-#order_submit {
-    margin: 0 0 0 10rem;
+#order_detail_table input {
+border:none 0px;
+/*color: #666452;*/
+
 }
 /* 푸터 */

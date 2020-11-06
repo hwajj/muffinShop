@@ -27,6 +27,11 @@ class OrderForm(forms.ModelForm):
     user_name = forms.CharField(max_length=20, label="성함")
     user_phone = forms.CharField(max_length=20, label="폰번호")
     user_address = forms.CharField(max_length=50, label="주소")
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Order
         fields = [
