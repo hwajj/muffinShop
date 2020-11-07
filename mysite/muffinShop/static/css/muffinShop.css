@@ -46,103 +46,96 @@ table {
 /** 헤더 **/
 header {
   /* 중앙정렬 */
-  width: 90vw;
-  margin: 0 4vw;
-  padding: 2vw;
-
-  /* 절대좌표 */
-  height: 160px;
-  position: relative;
-  text-decoration: none;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
 }
 
 /** 주문확인 **/
 
-header > #main_gnb {
-  position: absolute; /*부모에 relative 자손에 absolutew적*/
-  left: 62vw;
-  bottom: 3vw;
-}
-
-#main_gnb > ul {
-  overflow: hidden;
-}
-
-#main_gnb > ul > li {
-  font-size:1.5rem;
-  float: left;
+ #main_gnb {
+  margin: 2rem 0;
+   font-size: 1.5rem;
 }
 
 #main_gnb > ul > li a {
   display: block;
   margin: 1rem 3rem;
   padding: 2px 10px;
-  color: #666452;  /*기본 고동색 */
+  color: #666452;     /*기본 고동색 */
   text-decoration: none;
 }
 
 #main_gnb > ul > li > a:hover {
-  color:#918080;
+  color: #918080;
 }
-
-#main_gnb > ul > li:first-child > a {
-  border-radius: 10px 10px 10px 10px;
-}
-
 
 /* 상품목록 */
+.container {
+    display:flex;
+    flex-direction: row;
+    height: 80vh;
+}
 
-.container> #product_section> p {
+
+
+.container > #product_section > p {
   margin: 1vw 5vw;
   width: 60vw;
   font-size: 1.2rem;
   color: #372213;
 }
 
-.container> #product_section> p:hover {
-   color: #918080;
+.container > #product_section > p:hover {
+  color: #918080;
 }
 
-.container> #product_section {
+.container > #product_section {
   margin: 4vw;
   width: 60vw;
   font-size: 1rem;
-  float: left;
+  flex-grow: 3;
 }
 
 /*order aside */
 
-#order_aside {
+.order_aside{
   margin: 2vw;
-  padding: 1vw;
-  clear: left;
-  left: 72vw;
-  bottom: 2vw;
-  position: relative;
+  padding: 2vw;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content : flex-end;
 }
 
+.post-form {
+ text-align: center;
+ color: #666452;
+}
 .submit {
-  left: 1rem;
-  margin:1rem 0;
+  margin: 1rem 0;
   padding: 1px 10px;
   border: 1px solid #ed5485;
   border-radius: 7px 7px 7px 7px;
   background: #ed5485; /*분홍색*/
-  color: #fffde6;     /*연노랑색*/
+  color: #fffde6; /*연노랑색*/
   font-size: 1.2rem;
 }
 
-.submit: hover {
+
+.submit:hover {
   background: #fffde6; /**연노랑색**/
   color: #ed5485; /**분홍색**/
 }
 
 /* 주문하기 */
 
-.order{
+.order {
+  margin: 0 10rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   align-items: space-evenly;
 }
 
@@ -150,14 +143,14 @@ header > #main_gnb {
   color: #666452;
 }
 
-#order_detail_table{
+#order_detail_table {
   margin: 2rem;
   padding: 2rem;
   color: #666452;
-  width : 40vw;
+  width: 500px;
   border-collapse: collapse; /*선하나로 합치기*/
   border: 2px solid #666452;
-  position: relative;
+  right: 2rem;
 }
 
 #order_detail_table tr,
@@ -168,11 +161,11 @@ header > #main_gnb {
 }
 
 #order_detail_table th {
-  width: 30vw;
+  width: 200px;
 }
 
-#order_detail_table input{
-  border:none 0px;
+#order_detail_table input {
+  border: none 0px;
   color: #666452;
   font-size: 1rem;
   width: 19rem;
@@ -182,29 +175,28 @@ header > #main_gnb {
   color: #ed5485;
 }
 
-#order_detail_submit{
+#order_detail_submit {
   position: relative;
 }
 
-#order_detail .submit{
+#order_detail .submit {
   position: absolute;
   left: 24rem;
 }
-
 
 /*주문한 내역 찾기*/
 
 #input-number,
 #check-phone,
 .confirm {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #666452;
 }
 
-#input-number-form{
+#input-number-form {
   margin: 0;
   padding: 0;
 }
@@ -215,7 +207,7 @@ header > #main_gnb {
   border: 1px solid #ed5485;
   height: 2rem;
   font-family: inherit;
-  padding: 0 0 0 2rem;
+  padding: 0 1rem 0 1rem;
   color: #666452;
   letter-spacing: 5px;
 }
@@ -224,14 +216,10 @@ header > #main_gnb {
   border: 1px solid #ed5485;
   border-radius: 7px 7px 7px 7px;
   background: #ed5485; /*분홍색*/
-  color: #fffde6;     /*연노랑색*/
+  color: #fffde6; /*연노랑색*/
   font-size: 1.2rem;
 }
 
 /*주문내역 찾은 결과*/
 
-
 /* 푸터 */
-
-
-

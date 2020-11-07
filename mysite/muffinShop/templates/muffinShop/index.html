@@ -12,7 +12,7 @@
 	{% endfor %}
 </section>
 
-<aside id="order_aside">
+<aside class="order_aside">
 	<form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
 		{% csrf_token %} {{form.as_p}}
 		<input type="submit" class="submit" value="주문하기"/>
