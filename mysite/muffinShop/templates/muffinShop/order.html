@@ -1,45 +1,46 @@
 {% extends 'muffinShop/base.html' %} {% block content %}
-<div class="order">
-  <form method="POST" action="{% url 'muffinShop:confirm'  %}" class="post-form">
-    {% csrf_token %}
-    <input type="number" name="product_id" value="{{product.product_id}}" hidden />
-    <p>
-      <label for="product_name"></label>
-      <input type="hidden" name="product_name" value="{{product.product_name}}{{product.category}}" id="product_name" />
-    </p>
-    <p><label for="qt"></label> <input type="hidden" name="quantity" value="{{quantity}}" id="qt" readonly /></p>
-    <p>
-      <label for="price"></label>
-      <input
-        type="hidden"
-        name="total_price"
-        value="{{quantity}}*{{product.price}}= {{total_price}}"
-        id="price"
-        readonly
-      />
-    </p>
-    <div id="order_detail">
-      <table id="order_detail_table">
-        <tr>
-          <th>제품명</th>
-          <td>{{product.product_name}}{{product.category}}</td>
-        </tr>
-        <tr>
-          <th>수량</th>
-          <td>{{quantity}} 개</td>
-        </tr>
-        <tr>
-          <th>가격</th>
-          <td>{{product.price}}원 * {{quantity}}개 = {{total_price}} 원</td>
-        </tr>
-        {{order_form.as_table}}
-      </table>
 
-      <div id="order_detail_submit">
-        <input class="submit" type="submit" value="입력" />
-      </div>
-    </div>
-  </form>
+<form method="POST" action="{% url 'muffinShop:confirm'  %}" class="post-form">
+	{% csrf_token %}
+	<input type="number" name="product_id" value="{{product.product_id}}" hidden/>
+	<p>
+		<label for="product_name"></label>
+		<input type="hidden" name="product_name" value="{{product.product_name}}{{product.category}}" id="product_name"/>
+	</p>
+	<p><label for="qt"></label> <input type="hidden" name="quantity" value="{{quantity}}" id="qt" readonly/></p>
+	<p>
+		<label for="price"></label>
+		<input
+			type="hidden"
+			name="total_price"
+			value="{{quantity}}*{{product.price}}= {{total_price}}"
+			id="price"
+			readonly
+		/>
+	</p>
+	<div id="order_detail">
+		<div>
+			<table id="order_detail_table">
+				<tr>
+					<th>제품명</th>
+					<td>{{product.product_name}}{{product.category}}</td>
+				</tr>
+				<tr>
+					<th>수량</th>
+					<td>{{quantity}} 개</td>
+				</tr>
+				<tr>
+					<th>가격</th>
+					<td>{{product.price}}원 * {{quantity}}개 = {{total_price}} 원</td>
+				</tr>
+				{{order_form.as_table}}
+			</table>
+		</div>
+		<div id="order_detail_submit">
+			<input class="submit" type="submit" value="입력"/>
+		</div>
+</form>
 </div>
+
 
 {% endblock %}
