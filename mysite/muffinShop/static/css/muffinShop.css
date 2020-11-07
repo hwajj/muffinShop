@@ -91,17 +91,22 @@ header {
   flex-direction: row;
   justify-content : space-evenly;
   align-items: center;
+  color: #666452;
 }
 
 .order_products p {   /*제품 글씨 간격갖게*/
   padding: 1rem;
-  color: #666452;
 }
 
 .order_products p:hover {   /*제품 글씨 호버효과*/
   font-weight: bold;
 }
+.post-form,
+.post-form input{
+color: #666452;
+text-align:center;
 
+}
 
 
 /*order_aside */
