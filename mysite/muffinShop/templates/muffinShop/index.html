@@ -1,6 +1,7 @@
 {% extends 'muffinShop/base.html' %}
 {% block content %}
-<section id="product_section">
+<section class="order_section">
+	<div class="order_products">
 	{% if error_message %}
 	<p><strong>{{ error_message }}</strong></p>
 	<br/>
@@ -10,14 +11,17 @@
 	<p id="product_{{product.product_number}}">{{product.product_number}}. {{product.product_name}}{{product.category}}
 		({{product.price}})</p>
 	{% endfor %}
-</section>
+ </div>
 
-<aside class="order_aside">
+<div class="main_order">
+  <div class="main_order_pic"><img src="{ static 'asset/muffin/1.png' }" alt="머핀샵 로고" width="300rem" /></div>
+	<div class="main_order_choice">
 	<form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
 		{% csrf_token %} {{form.as_p}}
-		<input type="submit" class="submit" value="주문하기"/>
+		<input type="submit" id="order_aside_submit" value="주문하기"/>
 	</form>
-</aside>
+		</div>
 </div>
+</section>
 {% endif %}
 {% endblock %}

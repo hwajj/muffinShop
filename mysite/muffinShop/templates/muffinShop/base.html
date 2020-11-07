@@ -11,7 +11,7 @@
   <body>
     <header>
       <div id="title">
-        <a href="/muffinShop"><img src="{% static "asset/image/main-logo.png" %}" alt="머핀샵 로고" width="300rem" /></a>
+        <a href="/muffinShop"><img src="{% static 'asset/image/main-logo.png' %}" alt="머핀샵 로고" width="300rem" /></a>
       </div>
       <nav id="main_gnb">
         <ul>
@@ -19,14 +19,13 @@
         </ul>
       </nav>
     </header>
-    <div class="container">
+     <div class="container">
       {% block content %}
       {% endblock %}
+
     </div>
-    <footer>
 
 
-    </footer>
 
   </body>
 </html>

@@ -3,9 +3,7 @@
 {% if order %}
 {% csrf_token %}
 <div class="confirm">
-  <p>&nbsp&nbsp {{order.user_name}}님의 주문내역</p>
-  <br />
-
+  <p> {{order.user_name}}님의 주문내역</p>
     <ul>
       <li>주문상품 : {{product.product_name}}{{ product.category}}</li>
       <li>주문수량 : {{orderitem.quantity}}개</li>

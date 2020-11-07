@@ -1,12 +1,13 @@
-/* 초기화 */
-* {
-  margin: 0;
-  padding: 0;
+/*초기화*/
+html {
+height: 100%;
+
 }
 
 body {
   font-family: "Noto Serif KR", serif;
-  margin: 3vw 1vw 3vw 3vw;
+  margin: 2vw;
+  height: 100%;
 }
 
 li {
@@ -70,50 +71,67 @@ header {
   color: #918080;
 }
 
+
+.container{
+  display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+/* 푸터 */
+
+
+
+
 /* 상품목록 */
-.container {
-    display:flex;
-    flex-direction: row;
-    height: 80vh;
+.order_section{
+  display: flex;
+  flex-direction: row;
+  justify-content : space-evenly;
+  align-items: center;
+}
+
+.order_products p {   /*제품 글씨 간격갖게*/
+  padding: 1rem;
+  color: #666452;
+}
+
+.order_products p:hover {   /*제품 글씨 호버효과*/
+  font-weight: bold;
 }
 
 
 
-.container > #product_section > p {
-  margin: 1vw 5vw;
-  width: 60vw;
-  font-size: 1.2rem;
-  color: #372213;
-}
+/*order_aside */
 
-.container > #product_section > p:hover {
-  color: #918080;
-}
-
-.container > #product_section {
-  margin: 4vw;
-  width: 60vw;
-  font-size: 1rem;
-  flex-grow: 3;
-}
-
-/*order aside */
-
-.order_aside{
+.main_order{
   margin: 2vw;
-  padding: 2vw;
-  flex-grow: 1;
+  padding: 4vw;
   display: flex;
   flex-direction: column;
-  justify-content : flex-end;
+  justify-content : center;
+  align-items: center;
 }
 
-.post-form {
- text-align: center;
- color: #666452;
+
+.main_order_pin {
+  flex-grow:2;
 }
-.submit {
-  margin: 1rem 0;
+
+
+
+.order_aside input,
+.order_aside p{
+   text-align:center;
+   color:  #666452;
+}
+
+/*제출버튼모양*/
+#order_aside_submit,
+.submit{
+  margin: 0.3rem 0;
   padding: 1px 10px;
   border: 1px solid #ed5485;
   border-radius: 7px 7px 7px 7px;
@@ -122,37 +140,35 @@ header {
   font-size: 1.2rem;
 }
 
-
 .submit:hover {
   background: #fffde6; /**연노랑색**/
   color: #ed5485; /**분홍색**/
 }
 
 /* 주문하기 */
-
-.order {
-  margin: 0 10rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-items: space-evenly;
+.post-form {
+    margin:0 auto;
 }
 
 #order_detail {
   color: #666452;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #order_detail_table {
+  width: 50vw;
   margin: 2rem;
   padding: 2rem;
   color: #666452;
-  width: 500px;
   border-collapse: collapse; /*선하나로 합치기*/
   border: 2px solid #666452;
-  right: 2rem;
 }
-
+#order_detail_table th,
+#order_detail_table th,
 #order_detail_table tr,
 #order_detail_table td {
   margin: 1rem;
@@ -160,29 +176,18 @@ header {
   border: 2px solid #666452;
 }
 
-#order_detail_table th {
-  width: 200px;
-}
 
 #order_detail_table input {
   border: none 0px;
   color: #666452;
   font-size: 1rem;
-  width: 19rem;
 }
 
 #order_detail_table input:focus {
   color: #ed5485;
 }
 
-#order_detail_submit {
-  position: relative;
-}
 
-#order_detail .submit {
-  position: absolute;
-  left: 24rem;
-}
 
 /*주문한 내역 찾기*/
 
@@ -222,4 +227,4 @@ header {
 
 /*주문내역 찾은 결과*/
 
-/* 푸터 */
+
