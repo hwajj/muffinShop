@@ -8,7 +8,7 @@
 	{% endif %}
 	{% if products %}
 	{% for product in products %}
-	<p id="product_{{product.product_number}}">{{product.product_number}}. {{product.product_name}}{{product.category}}
+	<p class="product" id="product_{{product.product_number}}">{{product.product_number}}. {{product.product_name}}{{product.category}}
 		({{product.price}})</p>
 	{% endfor %}
  </div>
