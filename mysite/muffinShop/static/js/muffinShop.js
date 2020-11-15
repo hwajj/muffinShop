@@ -18,7 +18,6 @@ function clickOne(e) {
     else {
         inputQtValue += 1;
         productQt.value = inputQtValue;
-        quantity = inputQtValue;
     }
 }
 
