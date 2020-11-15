@@ -14,7 +14,7 @@
  </div>
 
 <div class="main_order">
-  <div class="main_order_pic"><img src="{ static 'asset/muffin/1.png' }" alt="머핀샵 로고" width="300rem" /></div>
+	<div class="main_order_pic"><img src="https://media.bakingmad.com/app_/responsive/BakingMad/media/content/Recipes/Cupcakes-Muffins/Muffins/Snickerdoodle-muffins/1-Snickerdoodle-Muffins-web.jpg?w=1300" width="300rem" height="300rem" alt="머핀사진"/></div>
 	<div class="main_order_choice">
 	<form class="post-form" action="{% url 'muffinShop:order'  %}" method="post">
 		{% csrf_token %} {{form.as_p}}
